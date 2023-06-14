@@ -40,3 +40,4 @@ Route::get('/employee-delete/{id}', [App\Http\Controllers\EmployeeController::cl
 // DIVISI
 Route::get('/divisi', [App\Http\Controllers\DivisiController::class, 'index'])->name('divisi.index');
 Route::post('/divisi-create', [App\Http\Controllers\DivisiController::class, 'create'])->name('divisi.create');
+Route::get('/divisi-delete/{id}', [App\Http\Controllers\DivisiController::class, 'delete'])->name('divisi.delete');

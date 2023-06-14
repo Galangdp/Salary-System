@@ -18,4 +18,10 @@ class DivisiController extends Controller
         Divisi::create($divisi);
         return redirect()->route('divisi.index');
     }
+
+    public function delete($id){
+        $divisi = Divisi::find($id);
+        $divisi->delete();
+        return redirect()->route('divisi.index');
+    }
 }

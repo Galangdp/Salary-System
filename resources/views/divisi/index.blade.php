@@ -21,7 +21,7 @@ Coded by www.creative-tim.com
   <link rel="icon" type="image/png" href="{{asset ('template/assets/img/favicon.png') }}">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Paper Dashboard 2 by Creative Tim
+    Gajiku || Divisi
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -38,14 +38,14 @@ Coded by www.creative-tim.com
   <div class="wrapper ">
     <div class="sidebar" data-color="white" data-active-color="danger">
       <div class="logo">
-        <a href="https://www.creative-tim.com" class="simple-text logo-mini">
+        <a href="https://galangdp.github.io/" class="simple-text logo-mini">
           <div class="logo-image-small">
             <img src="{{asset ('template/assets/img/logo-small.png') }}">
           </div>
           <!-- <p>CT</p> -->
         </a>
-        <a href="https://www.creative-tim.com" class="simple-text logo-normal">
-          Creative Tim
+        <a href="https://galangdp.github.io/" class="simple-text logo-normal">
+          Gajiku
           <!-- <div class="logo-image-big">
             <img src="{{asset ('template/assets/img/logo-big.png') }}">
           </div> -->
@@ -116,7 +116,7 @@ Coded by www.creative-tim.com
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="javascript:;">Paper Dashboard 2</a>
+            <a class="navbar-brand" href="javascript:;">Divisi</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -183,7 +183,7 @@ Coded by www.creative-tim.com
           </div> -->
 
           <!-- Custom -->
-          <div class="col-md-7">
+          <div class="col-md-6">
             <div class="card">
                 <div class="card-header">
                     <h4 class="font-weight-bold d-flex justify-content-center align-items-center"> Add Divisi</h4>    
@@ -214,7 +214,8 @@ Coded by www.creative-tim.com
             </div>
           </div>
 
-          <div class="col-md-5">
+          @if(!$divisi->isEmpty())
+          <div class="col-md-6">
 
             <div class="card">
 
@@ -232,6 +233,9 @@ Coded by www.creative-tim.com
                                 <th>
                                     Nama Divisi
                                 </th>
+                                <th>
+                                    Action
+                                </th>
                             </thead>
                             <tbody>
                                 @foreach($divisi as $row)
@@ -241,6 +245,13 @@ Coded by www.creative-tim.com
                                     </td>
                                     <td>
                                         {{$row->nama_divisi}}
+                                    </td>
+                                    <td>
+                                        <form action="{{route ('divisi.delete', $row -> id) }}" method="get">
+                                        @csrf
+                                        {{method_field('DELETE')}}
+                                        <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah anda akan menghapus {{$row->nama_divisi}} ?');">Hapus</button>
+                                        </form>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -252,6 +263,7 @@ Coded by www.creative-tim.com
             </div>
 
           </div>
+          @endif
 
         </div>
       </div>
@@ -260,7 +272,7 @@ Coded by www.creative-tim.com
           <div class="row">
             <nav class="footer-nav">
               <ul>
-                <li><a href="https://www.creative-tim.com" target="_blank">Creative Tim</a></li>
+                <li><a href="https://galangdp.github.io/" target="_blank">Galang Davian Pradana</a></li>
                 <li><a href="https://www.creative-tim.com/blog" target="_blank">Blog</a></li>
                 <li><a href="https://www.creative-tim.com/license" target="_blank">Licenses</a></li>
               </ul>
@@ -269,7 +281,7 @@ Coded by www.creative-tim.com
               <span class="copyright">
                 © <script>
                   document.write(new Date().getFullYear())
-                </script>, made with <i class="fa fa-heart heart"></i> by Creative Tim
+                </script>, made with <i class="fa fa-heart heart"></i> by Galang Davian Pradana
               </span>
             </div>
           </div>

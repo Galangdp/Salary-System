@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" href="{{ asset ('template/assets/img/favicon.png') }}">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Paper Dashboard 2 by Creative Tim
+    Gajiku || Employee
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -30,8 +30,8 @@
           </div>
           <!-- <p>CT</p> -->
         </a>
-        <a href="https://www.creative-tim.com" class="simple-text logo-normal">
-          Creative Tim
+        <a href="https://galangdp.github.io/" class="simple-text logo-normal">
+          Gajiku
           <!-- <div class="logo-image-big">
             <img src="{{ asset ('template/assets/img/logo-big.png') }}">
           </div> -->
@@ -176,11 +176,15 @@
                         <label for="inputGroupSelect01">Nama Employee</label>
                         <select class="custom-select" name="id_users" id="inputGroupSelect01">
                           <option selected>Choose...</option>
+                          @if ($user->isEmpty())
+                            <option disabled>Tambahkan User Dahulu</option>
+                          @else
                           @foreach ($user as $row)
                             @if ($row -> role === 'employee')
                               <option value="{{$row->id}}">{{$row->name}}</option>
                             @endif
                           @endforeach
+                          @endif
                         </select>
                       </div>
                     </div>
@@ -188,21 +192,37 @@
                     <div class="col-lg-6">
                       <div class="form-group mb-3">
                         <label>No Handphone</label>
-                        <input type="text" name="no_hp" class="form-control">
+                        <input type="text" name="no_hp" class="form-control" placeholder="Ex : 08123456789">
                       </div>
                     </div>
 
-                    <div class="col-lg-12">
+                    <div class="col-lg-6">
                       <div class="form-group mb-3">
                         <label>Salary</label>
-                        <input type="text" name="gaji_pokok" class="form-control">
+                        <input type="text" name="gaji_pokok" class="form-control" placeholder="Ex : 7.000.000">
+                      </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                      <div class="form-group mb-3">
+                        <label for="inputGroupSelect01">Divisi</label>
+                        <select class="custom-select" name="id_divisi" id="inputGroupSelect01">
+                          <option selected>Choose...</option>
+                          @if ($divisi->isEmpty())
+                            <option disabled>Tambahkan Divisi Dahulu</option>
+                          @else
+                          @foreach ($divisi as $row)
+                            <option value="{{ $row->id }}">{{ $row->nama_divisi }}</option>
+                          @endforeach
+                          @endif
+                        </select>
                       </div>
                     </div>
 
                     <div class="col-lg-12">
                       <div class="form-group mb-3">
                         <label>Alamat</label>
-                        <input type="text" name="alamat" class="form-control">
+                        <input type="text" name="alamat" class="form-control" placeholder="Ex : Depok, JL Duta 2 No 18">
                       </div>
                     </div>
 
@@ -227,6 +247,8 @@
 
             </div>
           </div>
+
+          @if(!$employee->isEmpty())
           <div class="col-lg-12">
             <div class="card">
               <div class="card-header">
@@ -278,6 +300,8 @@
               </div>
             </div>
           </div>
+          @endif
+
         </div>
       </div>
       <footer class="footer footer-black  footer-white ">
@@ -285,7 +309,7 @@
           <div class="row">
             <nav class="footer-nav">
               <ul>
-                <li><a href="https://www.creative-tim.com" target="_blank">Creative Tim</a></li>
+                <li><a href="https://galangdp.github.io/" target="_blank">Galang Davian Pradana</a></li>
                 <li><a href="https://www.creative-tim.com/blog" target="_blank">Blog</a></li>
                 <li><a href="https://www.creative-tim.com/license" target="_blank">Licenses</a></li>
               </ul>
@@ -294,7 +318,7 @@
               <span class="copyright">
                 © <script>
                   document.write(new Date().getFullYear())
-                </script>, made with <i class="fa fa-heart heart"></i> by Creative Tim
+                </script>, made with <i class="fa fa-heart heart"></i> by Galang Davian Pradana
               </span>
             </div>
           </div>

@@ -21,11 +21,11 @@ class CreateEmployeeTable extends Migration
             $table->string('gaji_pokok');
             // $table->string('barcode');
             $table->unsignedBigInteger('id_users');
-            // $table->unsignedBigInteger('id_divisi');
+            $table->unsignedBigInteger('id_divisi');
             $table->timestamps();
 
             $table->foreign('id_users')->references('id')->on('users')->onDelete('cascade');
-            // $table->foreign('id_divisi')->references('id')->on('divisi')->onDelete('cascade');
+            $table->foreign('id_divisi')->references('id')->on('divisi')->onDelete('cascade');
         });
     }
 

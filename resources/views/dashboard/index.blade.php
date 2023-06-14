@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" href="{{ asset ('template/assets/img/favicon.png') }}">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Gaji
+    Gajiku || Dashboard
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -24,17 +24,15 @@
   <div class="wrapper">
     <div class="sidebar" data-color="white" data-active-color="danger">
       <div class="logo">
-        <!-- <a href="https://www.creative-tim.com" class="simple-text logo-mini"> -->
+        <a href="https://galangdp.github.io/" class="simple-text logo-mini">
           <div class="logo-image-small">
             <img src="{{ asset ('template/assets/img/logo-small.png') }}">
           </div>
           <!-- <p>CT</p> -->
         </a>
-        <!-- <a href="https://www.creative-tim.com" class="simple-text logo-normal"> -->
-          <!-- Creative Tim -->
-          <!-- <div class="logo-image-big">
-            <img src="{{ asset ('template/assets/img/logo-big.png') }}">
-          </div> -->
+        <a href="https://galangdp.github.io/" class="simple-text logo-normal">
+          Gajiku
+          
         </a>
       </div>
       <div class="sidebar-wrapper">
@@ -169,7 +167,7 @@
                   <div class="col-7 col-md-8">
                     <div class="numbers">
                       <p class="card-category">Users</p>
-                      <p class="card-title">{{$totalCounts}}<p>
+                      <p class="card-title">{{$totalCounts['totalUsers']}}<p>
                     </div>
                   </div>
                 </div>
@@ -194,8 +192,8 @@
                   </div>
                   <div class="col-7 col-md-8">
                     <div class="numbers">
-                      <p class="card-category">Employee</p>
-                      <p class="card-title">-<p>
+                      <p class="card-category"></p>
+                      <p class="card-title">{{$totalCounts['totalEmployee']}}<p>
                     </div>
                   </div>
                 </div>
@@ -221,7 +219,7 @@
                   <div class="col-7 col-md-8">
                     <div class="numbers">
                       <p class="card-category">Divisi</p>
-                      <p class="card-title">-<p>
+                      <p class="card-title">{{$totalCounts['totalDivisi']}}<p>
                     </div>
                   </div>
                 </div>
@@ -374,7 +372,7 @@
           <div class="row">
             <nav class="footer-nav">
               <ul>
-                <li><a href="" target="_blank">Galang Davian Pradana</a></li>
+                <li><a href="https://galangdp.github.io/" target="_blank">Galang Davian Pradana</a></li>
                 <li><a href="" target="_blank">Blog</a></li>
                 <li><a href="" target="_blank">Licenses</a></li>
               </ul>
@@ -383,7 +381,7 @@
               <span class="copyright">
                 © <script>
                   document.write(new Date().getFullYear())
-                </script>, made with <i class="fa fa-heart heart"></i> by Galang Davian Pradan
+                </script>, made with <i class="fa fa-heart heart"></i> by Galang Davian Pradana
               </span>
             </div>
           </div>

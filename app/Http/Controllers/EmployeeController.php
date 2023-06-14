@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Employee;
 use App\Models\User;
+use App\Models\Divisi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -12,7 +13,8 @@ class EmployeeController extends Controller
     public function index(){
         $user = User::all();
         $employee = Employee::all();
-        return view('employee.index', compact('employee', 'user'));
+        $divisi = Divisi::all();
+        return view('employee.index', compact('employee', 'user', 'divisi'));
     }
 
     public function create(Request $request){
