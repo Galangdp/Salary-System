@@ -58,9 +58,9 @@
             </a>
           </li>
           <li>
-            <a href="notifications">
+            <a href="tunjangan">
               <i class="nc-icon nc-bell-55"></i>
-              <p>Notifications</p>
+              <p>Tunjangan</p>
             </a>
           </li>
           <li>
@@ -281,7 +281,7 @@
                           {{$row->users->name}}
                         </td>
                         <td class="text-center">
-                          {{$row->gaji_pokok}}
+                          Rp. {{$row->gaji_pokok}}
                         </td>
                         <td class="text-center">
                          <form action="{{route ('employee.delete', $row -> id) }}" method="get">

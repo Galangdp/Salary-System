@@ -21,7 +21,7 @@ Coded by www.creative-tim.com
   <link rel="icon" type="image/png" href="{{asset ('template/assets/img/favicon.png') }}">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Gajiku || Divisi
+    Gajiku || Tunjangan
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -116,7 +116,14 @@ Coded by www.creative-tim.com
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="javascript:;">Divisi</a>
+            <a class="nav-link btn-magnify d-flex justify-content-center align-items-center"
+                            href="/tunjangan">
+                            <i class="nc-icon nc-minimal-left"></i>
+                            <p>
+                                <span class="d-lg-none d-md-block">Stats</span>
+                            </p>
+                        </a>
+            <a class="navbar-brand" href="javascript:;">tunjangan</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -183,22 +190,30 @@ Coded by www.creative-tim.com
           </div> -->
 
           <!-- Custom -->
-          <div class="col-md-6">
+          <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="font-weight-bold d-flex justify-content-center align-items-center"> Add Divisi</h4>    
+                    <h4 class="font-weight-bold d-flex justify-content-center align-items-center"> Add Tunjangan</h4>    
                 </div>
 
                 <div class="card-body">
-                    <form action="{{route ('divisi.create') }}" method="post">
+                    <form action="{{route ('tunjangan.update', $tunjangan->id) }}" method="post">
                         @csrf
+                        {{method_field('PUT')}}
 
                         <div class="row">
 
                             <div class="col-md-12">
                                 <div class="form-group mb-3">
-                                    <label for="inputGroupSelect01">Nama Divisi</label>
-                                    <input type="text" class="form-control" placeholder="Username" name="nama_divisi">
+                                    <label for="inputGroupSelect01">Nama Tunjangan</label>
+                                    <input type="text" class="form-control" name="nama_tunjangan" value="{{$tunjangan -> nama_tunjangan}}">
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group mb-3">
+                                    <label for="inputGroupSelect01">Nominal</label>
+                                    <input type="text" class="form-control" name="nominal" value="{{$tunjangan -> nominal}}">
                                 </div>
                             </div>
 
@@ -213,57 +228,6 @@ Coded by www.creative-tim.com
 
             </div>
           </div>
-
-          @if(!$divisi->isEmpty())
-          <div class="col-md-6">
-
-            <div class="card">
-
-                <div class="card-header">
-                    <h4 class="font-weight-bold d-flex justify-content-center align-items-center"> Data Divisi</h4>    
-                </div>
-
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead class="text-primary text-center">
-                                <th>
-                                    No
-                                </th>
-                                <th>
-                                    Nama Divisi
-                                </th>
-                                <th>
-                                    Action
-                                </th>
-                            </thead>
-                            <tbody>
-                                @foreach($divisi as $row)
-                                <tr class="text-center">
-                                    <td>
-                                        {{ $loop->iteration }}
-                                    </td>
-                                    <td>
-                                        {{$row->nama_divisi}}
-                                    </td>
-                                    <td>
-                                        <form action="{{route ('divisi.delete', $row -> id) }}" method="get">
-                                        @csrf
-                                        {{method_field('DELETE')}}
-                                        <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah anda akan menghapus {{$row->nama_divisi}} ?');">Hapus</button>
-                                        </form>
-                                    </td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-            </div>
-
-          </div>
-          @endif
 
         </div>
       </div>

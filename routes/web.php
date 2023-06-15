@@ -41,3 +41,10 @@ Route::get('/employee-delete/{id}', [App\Http\Controllers\EmployeeController::cl
 Route::get('/divisi', [App\Http\Controllers\DivisiController::class, 'index'])->name('divisi.index');
 Route::post('/divisi-create', [App\Http\Controllers\DivisiController::class, 'create'])->name('divisi.create');
 Route::get('/divisi-delete/{id}', [App\Http\Controllers\DivisiController::class, 'delete'])->name('divisi.delete');
+
+// TUNJANGAN
+Route::get('/tunjangan', [App\Http\Controllers\TunjanganController::class, 'index'])->name('tunjangan.index');
+Route::post('/tunjangan-create', [App\Http\Controllers\TunjanganController::class, 'create'])->name('tunjangan.create');
+Route::get('/tunjangan-edit/{id}', [App\Http\Controllers\TunjanganController::class, 'edit'])->name('tunjangan.edit');
+Route::put('/tunjangan-update/{id}', [App\Http\Controllers\TunjanganController::class, 'update'])->name('tunjangan.update');
+Route::get('/tunjangan-delete/{id}', [App\Http\Controllers\TunjanganController::class, 'delete'])->name('tunjangan.delete');

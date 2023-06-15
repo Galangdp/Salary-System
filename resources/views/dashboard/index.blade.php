@@ -56,9 +56,9 @@
             </a>
           </li>
           <li>
-            <a href="notifications">
+            <a href="tunjangan">
               <i class="nc-icon nc-bell-55"></i>
-              <p>Notifications</p>
+              <p>Tunjangan</p>
             </a>
           </li>
           <li>
@@ -192,8 +192,12 @@
                   </div>
                   <div class="col-7 col-md-8">
                     <div class="numbers">
-                      <p class="card-category"></p>
-                      <p class="card-title">{{$totalCounts['totalEmployee']}}<p>
+                      <p class="card-category">Emoloyee</p>
+                      @foreach($users as $row)
+                        @if($row -> role === 'employee')
+                          <p class="card-title">{{$totalCounts['totalEmployee']}}<p>
+                        @endif
+                      @endforeach
                     </div>
                   </div>
                 </div>

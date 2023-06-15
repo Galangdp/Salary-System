@@ -16,7 +16,7 @@ class CreateTunjanganTable extends Migration
         Schema::create('tunjangan', function (Blueprint $table) {
             $table->id();
             $table->string('nama_tunjangan');
-            $table->integer('nominal');
+            $table->string('nominal');
             $table->timestamps();
         });
     }

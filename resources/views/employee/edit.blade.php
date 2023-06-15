@@ -46,22 +46,22 @@
                             <p>Dashboard</p>
                         </a>
                     </li>
-                    <li class="active ">
+                    <li   class="active ">
                         <a href="employee">
                             <i class="nc-icon nc-diamond"></i>
                             <p>Employee</p>
                         </a>
                     </li>
                     <li>
-                        <a href="map">
+                        <a href="divisi">
                             <i class="nc-icon nc-pin-3"></i>
-                            <p>Maps</p>
+                            <p>Divisi</p>
                         </a>
                     </li>
                     <li>
-                        <a href="notifications">
+                        <a href="tunjangan">
                             <i class="nc-icon nc-bell-55"></i>
-                            <p>Notifications</p>
+                            <p>Tunjangan</p>
                         </a>
                     </li>
                     <li>
